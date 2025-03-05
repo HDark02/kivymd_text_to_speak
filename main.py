@@ -9,6 +9,7 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 from kivymd.uix.screenmanager import ScreenManager
 from kivymd.toast.kivytoast.kivytoast import toast
+from kivy.core.audio import SoundLoader
 Window.keyboard_anim_args ={'d': .2, 't': 'in_out_expo'}
 Window.softinput_mode = "below_target"
 from kivymd.uix.list import OneLineListItem
@@ -18,8 +19,7 @@ from gtts.langs import _langs
 import pyttsx3
 from system_sounds import list_files_from_directory
 import os
-import pygame
-pygame.mixer.init()
+
 try:
     from kivmob import Kivmob
 except:
@@ -162,10 +162,9 @@ class school(MDApp):
         # Rechercher le widget to play
         for audio in audio_list.children:
             if audio.text == index_name:
+                sound=audio.text
                 try:
-                    pygame.mixer.music.stop()
-                    pygame.mixer.music.load(audio.text)  
-                    pygame.mixer.music.play()  
+                    self.sound.play()
                 except:
                     toast("Error to play\nTry it with your music player")
                 break
@@ -188,6 +187,7 @@ class school(MDApp):
             pass
 if __name__ == "__main__":
     school().run()
+
 
 
 
