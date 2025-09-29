@@ -1,0 +1,58 @@
+MDScreen:
+    name: "main"
+    MDFloatLayout:
+        md_bg_color: 'black'
+        Image:
+            source: "page_image_acceuil.png"
+            size_hint: 1, 1
+        MDLabel:
+            text: "Welcome in text to\naudio"
+            pos_hint: {"center_x": (.5), "center_y": (.8)}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color:"white"
+            bold: True
+            pos_hint: {"center_x": .5, "center_y": .9}
+            font_name:  "sylfaen"
+            font_size: "35sp"
+            size_hint_x: .85
+        MDLabel:
+            text: "Easily transform your texxt into\nclear and natural voice in just\nseconds.Wehether you whant to listen\n to articles, books, personal notes, or\nany other form of text, our app\n allorws you to instantly convert your\n words into audio."
+            halign: "center"
+            size_hint_x: (.8)
+            theme_text_color: "Custom"
+            text_color:"white"
+            font_name: "TAN-NIMBUS.otf"
+            font_size: "18sp"
+            pos_hint: {"center_x": (.5), "center_y": (.65)}
+        MDProgressBar:
+            value: 95
+            orientation: "horizontal"
+            theme_text_color: "Custom"
+            color: "gray"
+            halign: "center"
+            size_hint_x: .95
+            pos_hint: {"center_x": (.5), "center_y": (.45)}
+        MDRaisedButton:
+            id: co
+            text: "Continue"
+            size_hint: .4, .1
+            mode: "round"
+            bold: True
+            theme_text_color: "Custom"
+            text_color: "black"
+            md_bg_color: "gray"
+            font_name: "TAN-NIMBUS.otf"
+            font_size: "25sp"
+            pos_hint: {"center_x": (.5), "center_y": (.35)}
+            on_release: app.continu()
+        MDLabel:
+            text: "2024"
+            font_name: "TAN-NIMBUS.otf"
+            # height: self.texture_size[1]
+            theme_text_color: "Custom"
+            text_color:"white"
+            font_size: "11sp"
+            pos_hint: {"center_x": (.5), "center_y": (.08)}
+            halign: "center"
+        

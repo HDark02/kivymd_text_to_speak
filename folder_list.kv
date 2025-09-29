@@ -1,0 +1,57 @@
+<audioCard>
+    id: audio_name
+    # md_bg_color: "white"
+    MDIconButton:
+        icon: "minus-circle"
+        size_hint: None, None
+        size: "48dp", "48dp"
+        theme_text_color: "Custom"
+        icon_color: "red"
+        pos_hint: {"center_x": .8, "center_y": .5}
+        on_release:
+            app.remove_audio(audio_name.text)
+
+    MDIconButton:
+        icon: "play"
+        size_hint: None, None
+        size: "48dp", "48dp"
+        theme_text_color: "Custom"
+        icon_color: "blue"
+        pos_hint: {"center_x": .95, "center_y": .5}
+        on_release:
+            app.play_audio(audio_name.text)
+
+MDScreen:
+    name: "folder_list"
+    audio_list:audio_list
+    
+    MDFloatLayout:
+        md_bg_color: 'black'
+        Image:
+            source: "page_image_acceuil.png"
+            size_hint: 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            size_hint: .15, .08
+            bold: True
+            theme_text_color: "Custom"
+            text_color: "white"
+            icon_size: "30sp"
+            pos_hint: {"center_x": (.1), "center_y": (.95)}
+            on_release: app.back("main")
+        MDLabel:
+            id: title_list_audio
+            text: "Audio"
+            font_size: "25sp"
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: "white"
+            font_name: "TAN-NIMBUS.otf"
+            pos_hint: {"center_x": .5, "center_y": .89}
+    ScrollView:
+        do_scrool_x: False
+        do_scrool_y: True
+        size_hint_y: 0.85
+        pos_hint: {"center_x":.5, "top": .85}
+        MDList:
+            id: audio_list

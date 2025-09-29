@@ -1,0 +1,112 @@
+MDScreen:
+    name: "work_space"
+    entrer_text:entrer_text
+    
+    MDFloatLayout:
+        md_bg_color: 'black'
+        Image:
+            source: "page_image_acceuil.png"
+            size_hint: 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            size_hint: .15, .08
+            bold: True
+            theme_text_color: "Custom"
+            text_color: "white"
+            icon_size: "30sp"
+            pos_hint: {"center_x": (.1), "center_y": (.95)}
+            on_release: app.back("main")
+        MDLabel:
+            id: enter_lb_1
+            text: "Enter your text\nhere"
+            pos_hint: {"center_x": (.5), "center_y": (.8)}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color:"white"
+            bold: True
+            pos_hint: {"center_x": .5, "center_y": .9}
+            font_name:  "sylfaen"
+            font_size: "40sp"
+            size_hint_x: .9
+        MDLabel:
+            id: enter_lb_2
+            text: "Quick and simple text-to-audio\nconvesion\nChoose form various voices and\n languages.\nAdjust the speed and tone of the voice\nto suit your preferences.\nSave your audio files for offline\nlistening."
+            halign: "center"
+            size_hint_x: (.9)
+            bold: False
+            theme_text_color: "Custom"
+            text_color:"white"
+            font_name: "TAN-NIMBUS.otf"
+            font_size: "15sp"
+            pos_hint: {"center_x": (.5), "center_y": (.7)}
+            opacity: .8
+        MDTextField:
+            id: entrer_text
+            mode: "fill"
+            hint_text: "White your text to convert here"
+            hint_text_color_normal: "white"
+            hint_text_color_focus: "black"
+            fill_color_normal: [0.6372007366482505, 0.35447571755999924, 0.20338695099658166, 0.6850828729281768]
+            theme_text_color: "Custom"
+            text_color_normal: "white"
+            text_color_focus: "black"
+            text_color: "red"
+            font_size: "18sp"
+            size_hint: .8, .08
+            multiline: True
+            icon_left: "pen"
+            icon_left_color_normal: "white"
+            icon_left_color_focus: "black"
+            pos_hint: {"center_x": (.5), "center_y": (.5)}
+        MDProgressBar:
+            value: 95
+            orientation: "horizontal"
+            theme_text_color: "Custom"
+            color: "gray"
+            halign: "center"
+            size_hint_x: .95
+            pos_hint: {"center_x": (.5), "center_y": (.42)}
+        MDRaisedButton:
+            id: convert_bt
+            text: "Convert"
+            size_hint: .4, .1
+            mode: "round"
+            bold: True
+            theme_text_color: "Custom"
+            text_color: "black"
+            md_bg_color: "gray"
+            font_name: "TAN-NIMBUS.otf"
+            font_size: "25sp"
+            pos_hint: {"center_x": (.5), "center_y": (.33)}
+            on_release: app.convert(index=1)
+        Button:
+            id: folder_id
+            background_normal: "media.auchan.jpg"
+            size_hint: .15, .08
+            mode: "rectangle"
+            md_bg_color: "white"
+            font_size: "25sp"
+            pos_hint: {"center_x": (.13), "center_y": (.15)}
+            on_release:
+                root.manager.transition.direction = "left"
+                root.manager.current = "folder_list"
+        MDTextButton:
+            id: contac_us
+            text: "contact\nus"
+            size_hint: .4, .1
+            bold: True
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: "white"
+            font_size: "25sp"
+            pos_hint: {"center_x": (.9), "center_y": (.15)}
+            on_release: app.contater_nous("about_us")
+        MDLabel:
+            text: "2024"
+            font_name: "TAN-NIMBUS.otf"
+            # height: self.texture_size[1]
+            theme_text_color: "Custom"
+            text_color:"white"
+            font_size: "11sp"
+            pos_hint: {"center_x": (.5), "center_y": (.08)}
+            halign: "center"   
